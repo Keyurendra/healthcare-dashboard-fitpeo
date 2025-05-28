@@ -1,0 +1,98 @@
+.organ-status {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.status-card {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #1e1b4b;
+  margin-bottom: 5px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.status-date {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.progress-bar {
+  height: 8px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  overflow: hidden;
+  margin-top: 8px;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: var(--bar-width);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+}
+
+.progress-bar.red::before {
+  background: #ef5350;
+}
+
+.progress-bar.green::before {
+  background: #66bb6a;
+}
+
+.progress-bar.orange::before {
+  background: #ffa726;
+}
+
+.details-link {
+  margin-top: 8px;
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  align-self: flex-end;
+}
+@media (max-width: 1023px) {
+  .status-card {
+    padding: 12px;
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .organ-status {
+    gap: 12px;
+  }
+  
+  .status-card {
+    padding: 12px;
+    min-height: 70px;
+  }
+}
